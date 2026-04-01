@@ -6,8 +6,6 @@ function fixed_point_method(φ, x0, ε)
     x_n = x0
     x_n1 = φ(x_n)
     for i = 1:max_iters
-
-
         x_nm = x_n
         x_n = x_n1
         x_n1 = φ(x_n)
@@ -17,7 +15,7 @@ function fixed_point_method(φ, x0, ε)
         stop_crit = abs((x_n1 - x_n)/(1 - (x_n1 - x_n)/(x_n - x_nm)))
 
         if(stop_crit < ε)
-            root = x_n
+            root = x_n1
             @printf "root found %.2f %d iters \n" root i
             return root
         end

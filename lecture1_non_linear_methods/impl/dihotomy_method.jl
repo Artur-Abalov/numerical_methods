@@ -42,9 +42,3 @@ function dihotomy(f, x0, x1, ε)
     end
 
 end
-
-function f(x)
-    (x-1) * (x-5)
-end
-
-dihotomy(f, -3, 4, 0.1)

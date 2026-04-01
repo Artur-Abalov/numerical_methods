@@ -57,3 +57,12 @@ using Test
     end
 
 end
+
+@testset "Newton Augmented — плохой старт, но сходится" begin
+    @testset "exp(x) - 2" begin
+        f(x) = exp(x) - 2
+        result = newton_method_augmented(f, -2, 1e-8)
+        @test result !== nothing
+        @test result ≈ log(2)
+    end
+end
